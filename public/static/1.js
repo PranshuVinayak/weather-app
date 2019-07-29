@@ -36,8 +36,9 @@ form.addEventListener("submit", (e) => {
     const address = form.elements[0].value;
 
     //Check for empty input.
-    if (address === ""){
-        head.textContent = "Please check your Network Connection."
+    if (!address){
+        head.textContent = "Please input an address to search."
+        return;
     }
     
     head.textContent = "Fetching Temperature...";
