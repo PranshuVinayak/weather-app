@@ -3,6 +3,9 @@ const express = require('express');
 const fs = require('fs')
 const hbs = require('hbs')
 
+//heroku port number.
+const port = process.env.PORT || 1980;
+
 const app = express();
 
 //Define Paths for Express config
@@ -150,7 +153,7 @@ app.get('/weather', (req, res) => {
             console.log(currently.temperature)
             res.send({
                 forecast:daily.data[0].summary,
-                location: req.query.address,
+                location: location,
                 latitude,
                 longitude,
                 temperature: currently.temperature + '°C'
@@ -169,6 +172,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(1980, () => {
-    console.log("Server is up on port 1980.")
+app.listen(port, () => {
+    console.log("Server is up on port " + port + ".")
 })
