@@ -37,8 +37,7 @@ form.addEventListener("submit", (e) => {
     const address = form.elements[0].value;
     head.textContent = "Fetching Temperature...";
     // console.log(address)
-    fetch("http://localhost:1980/weather?address=" + address)
-    // fetch("http://puzzle.mead.io/puzzle")
+    fetch("/weather?address=" + address)
     .then(response => {
         response.json()
         .then((data) => {
