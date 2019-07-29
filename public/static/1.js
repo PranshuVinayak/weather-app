@@ -33,7 +33,6 @@ form.addEventListener("submit", (e) => {
     //     head.textContent = "Please Enter an Address"
     //     return;
     // }
-
     const address = form.elements[0].value;
 
     //Check for empty input.
