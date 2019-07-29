@@ -143,7 +143,7 @@ app.get('/weather', (req, res) => {
         // console.log(longitude)
         // dat = data;
         // console.log("Calling the forecast now...")
-        forecast(latitude, longitude, (err, {currently, daily}) => {
+        forecast(latitude, longitude, (err, {currently, daily} = {}) => {
             if (err) {
                 return res.send({ err })
             }
