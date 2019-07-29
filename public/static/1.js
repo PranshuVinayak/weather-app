@@ -35,6 +35,12 @@ form.addEventListener("submit", (e) => {
     // }
 
     const address = form.elements[0].value;
+
+    //Check for empty input.
+    if (address === ""){
+        head.textContent = "Please check your Network Connection."
+    }
+    
     head.textContent = "Fetching Temperature...";
     // console.log(address)
     fetch("/weather?address=" + address)
